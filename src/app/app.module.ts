@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ServicesComponent } from './services/services.component';
-import { ProfolioComponent } from './profolio/profolio.component';
+import { ProfolioComponent } from './portfolio/profolio.component';
 import { AboutComponent } from './about/about.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { ContactComponent } from './contact/contact.component';
@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BtntopComponent } from './btntop/btntop.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterComponent } from './register/register.component';
     HeaderComponent,
     NavbarComponent,
     BtntopComponent,
-    RegisterComponent
+    RegisterComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

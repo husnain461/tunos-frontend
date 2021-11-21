@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-.brandname{
+.navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-brand b {
+    margin-right: 20px;
+}
+.brandname {
     font-size: 3.4rem;
-    padding: 30px;
     color: aliceblue;
+}
+.lni-brush::before, .lni-layout::before, .lni-bolt::before {
+    font-size: 80px;
 }
