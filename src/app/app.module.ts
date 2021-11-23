@@ -15,6 +15,7 @@ import { BtntopComponent } from './btntop/btntop.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LandingComponent } from './landing/landing.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LandingComponent } from './landing/landing.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
