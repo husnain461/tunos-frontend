@@ -21,10 +21,11 @@
                             <li class="nav-item"><a class="page-scroll" href="landing/#about">About</a></li>
                             <!-- <li class="nav-item"><a class="page-scroll" href="#testimonial">Testimonial</a></li> -->
                             <li class="nav-item"><a class="page-scroll" href="landing/#contact">Contact</a></li>
-                            <li class="nav-item"><a class="page-scroll" (click)="navigateToLogin()">Login</a></li>
+                            <li class="nav-item"><a class="page-scroll" (click)="navigateToLogin()" *ngIf="!isLoggedIn">Login</a></li>
+                            <li class="nav-item"><a class="page-scroll" (click)="logout()" *ngIf="isLoggedIn">Logout</a></li>
                         </ul>
                     </div>
-                    <div class="navbar-btn d-none d-sm-inline-block">
+                    <div class="navbar-btn d-none d-sm-inline-block" *ngIf="!isLoggedIn">
                         <ul>
                             <li><a class="solid" (click)="navigateToRegister()">Sign Up</a></li>
                         </ul>

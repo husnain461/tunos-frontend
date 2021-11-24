@@ -17,6 +17,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './auth/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { AuthService } from './auth/auth.service';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
     providers: [
         AuthService

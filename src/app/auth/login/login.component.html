@@ -9,10 +9,10 @@
                     </div>
                     <form class="ud-login-form" #loginForm="ngForm" (ngSubmit)="getLogin()">
                         <div class="ud-form-group">
-                            <input type="email" name="email" ngModel placeholder="Email/username" required />
+                            <input type="email" name="email" [(ngModel)]="credentials.email" placeholder="Email/username" required />
                         </div>
                         <div class="ud-form-group">
-                            <input type="password" name="password" ngModel placeholder="*********" required />
+                            <input type="password" name="password" [(ngModel)]="credentials.password" placeholder="*********" required />
                         </div>
                         <div class="ud-form-group">
                             <button type="submit" [disabled]="!loginForm.valid" class="ud-main-btn w-100">Login</button>
