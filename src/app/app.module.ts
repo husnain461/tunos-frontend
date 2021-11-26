@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 import { AppComponent } from './app.component';
 import { ServicesComponent } from './services/services.component';
 import { ProfolioComponent } from './portfolio/profolio.component';
@@ -37,9 +40,13 @@ import { HttpClientModule } from '@angular/common/http';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-bottom-right'
+        })
     ],
     providers: [
         AuthService

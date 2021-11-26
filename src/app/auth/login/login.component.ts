@@ -17,13 +17,13 @@ export class LoginComponent implements OnInit {
     }
 
     getLogin() {
-        console.log(this.credentials.email);
-        console.log("CCC");
-        console.log(this.credentials.password);
-        this.authService.login(this.credentials.email, this.credentials.password).subscribe(successLogin => {
-            this.router.navigateByUrl("/");
-            console.log("HERE");
-        })
+        this.authService
+            .login(this.credentials.email, this.credentials.password)
+            .subscribe(successLogin => {
+                this.router.navigateByUrl("/");
+            }, (error) => {
+                console.log(error);
+            })
     }
 
 }

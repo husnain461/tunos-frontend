@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http"
+import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Subject } from "rxjs";
 import { tap } from "rxjs/operators";
 
@@ -22,29 +22,38 @@ export class AuthService {
                 password: password
             }
         ).pipe(
-            tap((userResponse: any) => {
-                this.emitLoggedInUser(userResponse);
+            tap((response: any) => {
+                this.emitLoggedInUser(response.userInfo);
             })
         )
     }
 
-    signUp(name: string, email: string, password: string) {
+    register(firstName: string, lastName: string, username: string, email: string, password: string, phoneNumber: string) {
         return this.httpClient.post(
-            environment.BASE_URL + "/auth/signUp",
+            environment.BASE_URL + "/auth/register",
             {
-                name: name,
+                first_name: firstName,
+                last_name: lastName,
+                username: username,
+                phone_number: phoneNumber,
                 email: email,
                 password: password
             }
         ).pipe(
-            tap((userResponse: any) => {
-                this.emitLoggedInUser(userResponse);
+            tap((response: any) => {
+                this.emitLoggedInUser(response.userInfo);
             })
         )
     }
 
     private emitLoggedInUser(userInfo: any) {
-        const user = new User(userInfo.name, userInfo.email, userInfo.apiKey);
-        this.user.next(user);
+        //TODO save into local db
+        const userResponse = new User(
+            userInfo.username, userInfo.first_name,
+            userInfo.last_name, userInfo.phone_number,
+            userInfo.email, userInfo.authToken
+        );
+
+        this.user.next(userResponse);
     }
 }
