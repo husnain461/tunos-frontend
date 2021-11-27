@@ -11,11 +11,33 @@
                 </div> <!-- section title -->
             </div>
             
+            function productBuildTableRow() {
+    var ret = "<tr>" +
+        "<td>" +
+        "<button type='button' onclick='productDisplay(this);' class='btn btn-default'>" +
+        "<span class='glyphicon glyphicon-edit' />" +
+        "</button>" +
+        "</td>" +
+        "<td>" + $("#productname").val() + "</td>" +
+        "<td>" + $("#introdate").val() + "</td>" +
+        "<td>" + $("#url").val() + "</td>" +
+        "<td>" +
+        "<button type='button' onclick='productDelete(this);' class='btn btn-default'>" +
+        "<span class='glyphicon glyphicon-remove' />" +
+        "</button>" +
+        "</td>" +
+        "</tr>"
+
+    return ret;
+}
+
+            
+            
             <table id="edit" class="table table-bordered table-condensed table-striped">
     <thead>
         <tr>
             <th>Edit</th>
-            <th>Product Name</th>
+            <th>Contact Name</th>
             <th>Introduction Date</th>
             <th>URL</th>
             <th>Delete</th>
