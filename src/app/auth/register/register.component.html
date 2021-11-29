@@ -1,0 +1,61 @@
+<!-- ====== Register Start ====== -->
+<section class="ud-login" id="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ud-login-wrapper">
+                    <h2 class="mb-20">New Member Register</h2>
+                    <form class="ud-login-form" (ngSubmit)="getRegister(registerForm)" #registerForm="ngForm">
+                        <div class="ud-form-group">
+                            <input type="text" name="firstName" ngModel placeholder="First Name" required />
+                        </div>
+                        <div class="ud-form-group">
+                            <input type="text" name="lastName" ngModel placeholder="Last Name" required />
+                        </div>
+                        <div class="ud-form-group">
+                            <input type="text" name="username" ngModel placeholder="Username" required />
+                        </div>
+                        <div class="ud-form-group">
+                            <input type="number" name="phoneNumber" ngModel placeholder="Phone Number" required />
+                        </div>
+                        <div class="ud-form-group">
+                            <input type="email" name="email" ngModel placeholder="Email" required />
+                        </div>
+                        <div class="ud-form-group">
+                            <input type="password" name="password" ngModel placeholder="Password" required />
+                        </div>
+                        <div class="ud-form-group">
+                            <input type="password" name="confirmedPassword" ngModel placeholder="Confirm Password" required />
+                        </div>
+                        <div class="ud-form-group">
+                            <button type="submit" class="ud-main-btn w-100">Sign Up</button>
+                        </div>
+                    </form>
+                    <!-- <div class="ud-socials-connect">
+                        <p>Connect With</p>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" class="facebook">
+                                    <i class="lni lni-facebook-filled"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="twitter">
+                                    <i class="lni lni-twitter-filled"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="google">
+                                    <i class="lni lni-google"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <p class="signup-option"> Already a Tunos member? <a routerLink="/login"> Sign In </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====== Login End ====== -->
