@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 
@@ -9,7 +9,7 @@ import { AuthService } from '../auth/auth.service';
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
     //TODO check for below error of ! -- remove !
     // Property 'userSubscription' has no initializer and is not definitely assigned in the constructor. 
     userSubscription!: Subscription;
@@ -27,6 +27,10 @@ export class NavbarComponent implements OnInit {
         })
     }
 
+    ngOnDestroy() {
+        this.userSubscription.unsubscribe();
+    }
+
     navigateToLogin() {
         this.router.navigate(["login"]);
     }
@@ -35,7 +39,7 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(["register"]);
     }
 
-    logout(){
-        
+    logout() {
+
     }
 }
